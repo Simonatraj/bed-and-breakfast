@@ -4,39 +4,43 @@ This repository contains my complete solutions to the **Bed and Breakfast** (BnB
 
 ## Overview
 
-For this project, I explored real-world Airbnb data from Boston to analyze how short-term rentals are changing the local tourism landscape. Using SQL, I created several views to summarize listings, availability, reviews, and vacancy trends. The assignment focuses on advanced querying, aggregation, and the creation of standalone views.
+For this assignment, I analyzed Boston Airbnb data to explore how short-term rentals impact the city’s tourism and housing market. Using SQL, I created several views to summarize listings, availability, reviews, and vacancy trends for June 2023. The project demonstrates SQL skills in joins, aggregation, filtering, and view creation for data analysis.
 
 ## Files
 
 - `bnb.db` – Provided SQLite database
-- `no_descriptions.sql` – View omitting descriptions from listings
-- `one_bedrooms.sql` – View of listings with exactly one bedroom
-- `available.sql` – View showing all listing availability dates
-- `frequently_reviewed.sql` – View of top 100 frequently reviewed listings
-- `june_vacancies.sql` – View showing listings with most vacant days in June 2023
+- `bnb.query` – Contains all SQL queries and view definitions for the assignment
 - `README.md` – Project documentation
 
 ## Database Structure
-The database design can be seen here: https://cs50.harvard.edu/sql/psets/4/bnb/#schema
+
+The `bnb.db` database design can be seen here: https://cs50.harvard.edu/sql/psets/4/bnb/#schema
 
 ## How to Use
 
-1. Open the terminal and start SQLite:
+1. Open `bnb.db` in SQLite:
 sqlite3 bnb.db
-2. Load any view definitions as needed (replace with the relevant filename):
-.read no_descriptions.sql
-3. Query the created views directly. For example:
+sqlite3 bnb.db
+
+2. Load all queries and views:
+.read bnb.query
+
+3. Explore results by querying the views:
+SELECT * FROM no_descriptions;
 SELECT * FROM one_bedrooms;
 SELECT * FROM available WHERE date = '2023-12-31';
 SELECT * FROM frequently_reviewed LIMIT 5;
 SELECT * FROM june_vacancies ORDER BY days_vacant DESC LIMIT 5;
-4. To refresh a view, drop it and reload:
-DROP VIEW view_name;
-.read view_file.sql
+
+4. To update a view during testing:
+DROP VIEW IF EXISTS view_name;
+.read bnb.query
 
 ## Notes
 
-- Each view is written to be standalone and does not depend on any other view in the project.
-- The underlying dataset comes from insideairbnb.com and is focused on Boston properties.
-- Project tasks highlight core SQL skills: filtering, joins, aggregation, sorting, and creating views for analysis.
+- All queries and view definitions are organized in a single file, `bnb.query`.
+- Each view is designed to be standalone and independent.
+- Dataset is sourced from insideairbnb.com, focusing on Boston.
+- The assignment highlights proficiency in advanced SQL and real-world data analysis.
+
 
