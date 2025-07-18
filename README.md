@@ -18,23 +18,11 @@ The `bnb.db` database design can be seen here: https://cs50.harvard.edu/sql/pset
 
 ## How to Use
 
-1. Open `bnb.db` in SQLite:
-sqlite3 bnb.db
-sqlite3 bnb.db
-
-2. Load all queries and views:
-.read bnb.query
-
-3. Explore results by querying the views:
-SELECT * FROM no_descriptions;
-SELECT * FROM one_bedrooms;
-SELECT * FROM available WHERE date = '2023-12-31';
-SELECT * FROM frequently_reviewed LIMIT 5;
-SELECT * FROM june_vacancies ORDER BY days_vacant DESC LIMIT 5;
-
+1. Open the database using SQLite
+2. Load all queries and views
+3. Explore results by querying the views
 4. To update a view during testing:
 DROP VIEW IF EXISTS view_name;
-.read bnb.query
 
 ## Notes
 
